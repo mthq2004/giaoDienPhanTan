@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.FlatLightLaf;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -24,6 +25,7 @@ import javax.swing.JDialog;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Frame;
+import java.awt.GridBagLayout;
 
 import javax.swing.SwingConstants;
 import java.awt.Component;
@@ -60,7 +62,7 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 	private JLabel soDT_lab;
 	private JTextField tfSoDT;
 	private JTable table;
-	private JPanel paneTrong_1;
+	private JPanel panelLogo;
 	private JPanel paneTrong_2;
 //	private Mon_DAO mon_dao = new Mon_DAO();
 //	private ArrayList<Mon> dsMon;
@@ -88,6 +90,14 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 	private JButton btnAbout;
 	private JPanel paneTrong;
 	private JPanel panelTrangChu;
+	private JLabel lbLogo;
+	private JPanel panelNameApp;
+	private JPanel panelAccount;
+	private JLabel lbAnh;
+	private JPanel panelAccountInformation;
+	private JLabel lbNameApp;
+	private JLabel lbNameUser;
+	private JLabel lbRoleUser;
 
 	/**
 	 * Launch the application.
@@ -123,21 +133,73 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 		
 		JPanel navbar = new JPanel();
 		navbar.setBackground(new Color(255, 255, 255));
-		navbar.setBorder(new EmptyBorder(0, 5, 0, 5));
+		navbar.setBorder(new MatteBorder(0, 0, 0, 2, new Color(52, 122, 228)));
 		contentPane.add(navbar, BorderLayout.WEST);
 		navbar.setLayout(new BoxLayout(navbar, BoxLayout.Y_AXIS));
 		
-		paneTrong_1 = new JPanel();
-		paneTrong_1.setBackground(new Color(255, 255, 255));
-		navbar.add(paneTrong_1);
-		paneTrong_1.setLayout(new BorderLayout(0, 0));
+		panelLogo = new JPanel();
+		panelLogo.setBackground(new Color(255, 255, 255));
+		navbar.add(panelLogo);
+		panelLogo.setLayout(new BorderLayout(0, 0));
+		
+		lbLogo = new JLabel("");
+		lbLogo.setIcon(new ImageIcon(TrangChu.class.getResource("/img/logo.png")));
+		panelLogo.add(lbLogo, BorderLayout.NORTH);
 		
 		body = new JPanel();
 		body.setLayout(new BorderLayout());
 		contentPane.add(body, BorderLayout.CENTER);
 		
 		header = new JPanel();
+		header.setBackground(new Color(52, 122, 228));
 		body.add(header, BorderLayout.NORTH);
+		header.setLayout(new BorderLayout(0, 0));
+		
+		panelNameApp = new JPanel(new GridBagLayout()); // căn giữa cả ngang và dọc
+		panelNameApp.setPreferredSize(new Dimension(400, 80)); // tăng kích thước panel
+		panelNameApp.setBackground(new Color(52, 122, 228));
+		header.add(panelNameApp, BorderLayout.CENTER);
+
+		lbNameApp = new JLabel("DR.CHEN ");
+		lbNameApp.setForeground(new Color(255, 255, 255));
+		lbNameApp.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 21));
+		panelNameApp.setPreferredSize(new Dimension(0, 80)); // rộng tự giãn, cao 80
+		panelNameApp.add(lbNameApp); // tự động căn giữa nhờ GridBagLayout
+
+		
+		panelAccount = new JPanel();
+		panelAccount.setBackground(new Color(52, 122, 228));
+		panelAccount.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // padding nhẹ
+		header.add(panelAccount, BorderLayout.EAST);
+		panelAccount.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+
+		// Ảnh đại diện
+		lbAnh = new JLabel("");
+		lbAnh.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-account-40.png")));
+		lbAnh.setAlignmentX(Component.CENTER_ALIGNMENT); // căn giữa trong BoxLayout
+		panelAccount.add(lbAnh);
+
+		// Thông tin người dùng
+		panelAccountInformation = new JPanel();
+		panelAccountInformation.setBackground(new Color(52, 122, 228));
+		panelAccountInformation.setLayout(new GridLayout(2, 1, 0, 0));
+		panelAccountInformation.setAlignmentX(Component.CENTER_ALIGNMENT); // căn giữa
+		panelAccount.add(panelAccountInformation);
+
+		// Tên người dùng
+		lbNameUser = new JLabel("Name user");
+		lbNameUser.setForeground(new Color(255, 255, 255));
+		lbNameUser.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lbNameUser.setHorizontalAlignment(SwingConstants.LEFT); // căn giữa trong ô Grid
+		panelAccountInformation.add(lbNameUser);
+
+		// Vai trò người dùng
+		lbRoleUser = new JLabel("Role user");
+		lbRoleUser.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lbRoleUser.setForeground(new Color(0, 255, 0));
+		lbRoleUser.setHorizontalAlignment(SwingConstants.LEFT); // căn giữa trong ô Grid
+		panelAccountInformation.add(lbRoleUser);
+
 		
 		main = new JPanel();
 		body.add(main, BorderLayout.CENTER);

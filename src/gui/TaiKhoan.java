@@ -151,14 +151,14 @@ public class TaiKhoan extends JPanel {
         panel_5.add(panel_6);
         
         btnThem = new JButton("Thêm");
-        btnThem.setIcon(new ImageIcon(Mon.class.getResource("/img/icons8-add-30.png")));
+        btnThem.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-add-30.png")));
         panel_6.add(btnThem);
         
         panel_6.add(Box.createHorizontalStrut(2));
         
         btnSua = new JButton("Sửa");
         btnSua.setPreferredSize(new Dimension(93, 39));
-        btnSua.setIcon(new ImageIcon(Mon.class.getResource("/img/icons8-tools-30.png")));
+        btnSua.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-tools-30.png")));
         panel_6.add(btnSua);
         
         JPanel panel_1 = new JPanel();
