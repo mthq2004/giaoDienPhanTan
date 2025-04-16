@@ -98,6 +98,7 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 	private JLabel lbNameApp;
 	private JLabel lbNameUser;
 	private JLabel lbRoleUser;
+	private JPanel nav;
 
 	/**
 	 * Launch the application.
@@ -126,7 +127,7 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 		setLocationRelativeTo(null);
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
@@ -205,13 +206,18 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 		body.add(main, BorderLayout.CENTER);
 		main.setLayout(new BorderLayout(0, 0));
 		
+		nav = new JPanel();
+		nav.setBackground(new Color(255, 255, 255));
+		navbar.add(nav);
+		
+		nav.setLayout(new BoxLayout(nav, BoxLayout.Y_AXIS));
 		panelTrangChu = new JPanel();
 		main.add(panelTrangChu, BorderLayout.CENTER);
 		
 		trangChu = new JPanel();
-		trangChu.setBorder(new EmptyBorder(25, 0, 25, 0));
+		trangChu.setBorder(new EmptyBorder(20, 0, 20, 0));
 		trangChu.setBackground(new Color(255, 255, 255));
-		navbar.add(trangChu);
+		nav.add(trangChu);
 		trangChu.setLayout(new BorderLayout(0, 0));
 		
 		btnTrangChu = new JButton("Trang chủ");
@@ -219,129 +225,186 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnTrangChu.setForeground(new Color(128, 128, 128));
-		btnTrangChu.setBackground(new Color(128, 128, 128));
+		btnTrangChu.setHorizontalAlignment(SwingConstants.LEFT);
 		btnTrangChu.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-home-32.png")));
 		btnTrangChu.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnTrangChu.setContentAreaFilled(false);
-		btnTrangChu.setHorizontalAlignment(SwingConstants.LEFT);
+		btnTrangChu.setVerticalAlignment(SwingConstants.CENTER); // Căn giữa theo chiều dọc
+		btnTrangChu.setIconTextGap(15); // Tùy chỉnh khoảng cách
+		btnTrangChu.setPreferredSize(new Dimension(200, 50)); // Chiều rộng 200, chiều cao 50
+		btnTrangChu.setBorder(null);
 		btnTrangChu.setBorderPainted(false);
+		btnTrangChu.setFocusPainted(false);
+		btnTrangChu.setContentAreaFilled(false);
+		btnTrangChu.setOpaque(false);
+		btnTrangChu.setForeground(Color.GRAY);
+		btnTrangChu.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+
 		trangChu.add(btnTrangChu);
 		
 		sanPham = new JPanel();
-		sanPham.setBorder(new EmptyBorder(25, 0, 25, 0));
+		sanPham.setBorder(new EmptyBorder(20, 0, 20, 0));
 		sanPham.setBackground(Color.WHITE);
-		navbar.add(sanPham);
+		nav.add(sanPham);
 		sanPham.setLayout(new BorderLayout(0, 0));
 		
 		btnSanPham = new JButton("Sản phẩm");
-		btnSanPham.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-medicine-32.png")));
 		btnSanPham.setHorizontalAlignment(SwingConstants.LEFT);
-		btnSanPham.setForeground(Color.GRAY);
+		btnSanPham.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-medicine-32.png")));
 		btnSanPham.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnSanPham.setContentAreaFilled(false);
+		btnSanPham.setVerticalAlignment(SwingConstants.CENTER);
+		btnSanPham.setIconTextGap(15);
+		btnSanPham.setPreferredSize(new Dimension(200, 50));
+		btnSanPham.setBorder(null);
 		btnSanPham.setBorderPainted(false);
-		btnSanPham.setBackground(Color.GRAY);
+		btnSanPham.setFocusPainted(false);
+		btnSanPham.setContentAreaFilled(false);
+		btnSanPham.setOpaque(false);
+		btnSanPham.setForeground(Color.GRAY);
+		btnSanPham.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		sanPham.add(btnSanPham, BorderLayout.CENTER);
 		
 		khachHang = new JPanel();
-		khachHang.setBorder(new EmptyBorder(25, 0, 25, 0));
+		khachHang.setBorder(new EmptyBorder(20, 0, 20, 0));
 		khachHang.setBackground(Color.WHITE);
-		navbar.add(khachHang);
+		nav.add(khachHang);
 		khachHang.setLayout(new BorderLayout(0, 0));
 		
 		btnKhachHang = new JButton("Khách hàng");
-		btnKhachHang.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-customers-32.png")));
 		btnKhachHang.setHorizontalAlignment(SwingConstants.LEFT);
-		btnKhachHang.setForeground(Color.GRAY);
+		btnKhachHang.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-customers-32.png")));
 		btnKhachHang.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnKhachHang.setContentAreaFilled(false);
+		btnKhachHang.setVerticalAlignment(SwingConstants.CENTER);
+		btnKhachHang.setIconTextGap(15);
+		btnKhachHang.setPreferredSize(new Dimension(200, 50));
+		btnKhachHang.setBorder(null);
 		btnKhachHang.setBorderPainted(false);
-		btnKhachHang.setBackground(Color.GRAY);
+		btnKhachHang.setFocusPainted(false);
+		btnKhachHang.setContentAreaFilled(false);
+		btnKhachHang.setOpaque(false);
+		btnKhachHang.setForeground(Color.GRAY);
+		btnKhachHang.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		khachHang.add(btnKhachHang, BorderLayout.CENTER);
 		
 		nhanVien = new JPanel();
-		nhanVien.setBorder(new EmptyBorder(25, 0, 25, 0));
+		nhanVien.setBorder(new EmptyBorder(20, 0, 20, 0));
 		nhanVien.setBackground(Color.WHITE);
-		navbar.add(nhanVien);
+		nav.add(nhanVien);
 		nhanVien.setLayout(new BorderLayout(0, 0));
 		
 		btnNhanVien = new JButton("Nhân viên");
-		btnNhanVien.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-employees-32.png")));
 		btnNhanVien.setHorizontalAlignment(SwingConstants.LEFT);
-		btnNhanVien.setForeground(Color.GRAY);
+		btnNhanVien.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-employees-32.png")));
 		btnNhanVien.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNhanVien.setContentAreaFilled(false);
+		btnNhanVien.setVerticalAlignment(SwingConstants.CENTER);
+		btnNhanVien.setIconTextGap(15);
+		btnNhanVien.setPreferredSize(new Dimension(200, 50));
+		btnNhanVien.setBorder(null);
 		btnNhanVien.setBorderPainted(false);
-		btnNhanVien.setBackground(Color.GRAY);
+		btnNhanVien.setFocusPainted(false);
+		btnNhanVien.setContentAreaFilled(false);
+		btnNhanVien.setOpaque(false);
+		btnNhanVien.setForeground(Color.GRAY);
+		btnNhanVien.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		nhanVien.add(btnNhanVien, BorderLayout.CENTER);
 		
 		nhaCungCap = new JPanel();
-		nhaCungCap.setBorder(new EmptyBorder(25, 0, 25, 0));
+		nhaCungCap.setBorder(new EmptyBorder(20, 0, 20, 0));
 		nhaCungCap.setBackground(Color.WHITE);
-		navbar.add(nhaCungCap);
+		nav.add(nhaCungCap);
 		nhaCungCap.setLayout(new BorderLayout(0, 0));
 		
 		btnNhaCungCap = new JButton("Nhà cung cấp");
-		btnNhaCungCap.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNhaCungCap.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-supplier-32.png")));
 		btnNhaCungCap.setHorizontalAlignment(SwingConstants.LEFT);
-		btnNhaCungCap.setForeground(Color.GRAY);
+		btnNhaCungCap.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-supplier-32.png")));
 		btnNhaCungCap.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnNhaCungCap.setContentAreaFilled(false);
+		btnNhaCungCap.setVerticalAlignment(SwingConstants.CENTER);
+		btnNhaCungCap.setIconTextGap(15);
+		btnNhaCungCap.setPreferredSize(new Dimension(200, 50));
+		btnNhaCungCap.setBorder(null);
 		btnNhaCungCap.setBorderPainted(false);
-		btnNhaCungCap.setBackground(Color.GRAY);
+		btnNhaCungCap.setFocusPainted(false);
+		btnNhaCungCap.setContentAreaFilled(false);
+		btnNhaCungCap.setOpaque(false);
+		btnNhaCungCap.setForeground(Color.GRAY);
+		btnNhaCungCap.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		nhaCungCap.add(btnNhaCungCap, BorderLayout.CENTER);
 		
 		hoaDon = new JPanel();
-		hoaDon.setBorder(new EmptyBorder(25, 0, 25, 0));
+		hoaDon.setBorder(new EmptyBorder(20, 0, 20, 0));
 		hoaDon.setBackground(Color.WHITE);
-		navbar.add(hoaDon);
+		nav.add(hoaDon);
 		hoaDon.setLayout(new BorderLayout(0, 0));
 		
+
 		btnHoaDon = new JButton("Hóa đơn");
-		btnHoaDon.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-bill-32.png")));
 		btnHoaDon.setHorizontalAlignment(SwingConstants.LEFT);
-		btnHoaDon.setForeground(Color.GRAY);
+		btnHoaDon.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-bill-32.png")));
 		btnHoaDon.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnHoaDon.setContentAreaFilled(false);
+		btnHoaDon.setVerticalAlignment(SwingConstants.CENTER);
+		btnHoaDon.setIconTextGap(15);
+		btnHoaDon.setPreferredSize(new Dimension(200, 50));
+		btnHoaDon.setBorder(null);
 		btnHoaDon.setBorderPainted(false);
-		btnHoaDon.setBackground(Color.GRAY);
+		btnHoaDon.setFocusPainted(false);
+		btnHoaDon.setContentAreaFilled(false);
+		btnHoaDon.setOpaque(false);
+		btnHoaDon.setForeground(Color.GRAY);
+		btnHoaDon.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		hoaDon.add(btnHoaDon, BorderLayout.CENTER);
 		
 		thongKe = new JPanel();
-		thongKe.setBorder(new EmptyBorder(25, 0, 25, 0));
+		thongKe.setBorder(new EmptyBorder(20, 0, 20, 0));
 		thongKe.setBackground(Color.WHITE);
-		navbar.add(thongKe);
+		nav.add(thongKe);
 		thongKe.setLayout(new BorderLayout(0, 0));
 		
 		btnThongKe = new JButton("Thống kê");
-		btnThongKe.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-statistic-32.png")));
 		btnThongKe.setHorizontalAlignment(SwingConstants.LEFT);
-		btnThongKe.setForeground(Color.GRAY);
+		btnThongKe.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnThongKe.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-statistic-32.png")));
 		btnThongKe.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnThongKe.setContentAreaFilled(false);
+		btnThongKe.setVerticalAlignment(SwingConstants.CENTER);
+		btnThongKe.setIconTextGap(15);
+		btnThongKe.setPreferredSize(new Dimension(200, 50));
+		btnThongKe.setBorder(null);
 		btnThongKe.setBorderPainted(false);
-		btnThongKe.setBackground(Color.GRAY);
+		btnThongKe.setFocusPainted(false);
+		btnThongKe.setContentAreaFilled(false);
+		btnThongKe.setOpaque(false);
+		btnThongKe.setForeground(Color.GRAY);
+		btnThongKe.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		thongKe.add(btnThongKe, BorderLayout.CENTER);
 		
 		about = new JPanel();
-		about.setBorder(new EmptyBorder(25, 0, 25, 0));
+		about.setBorder(new EmptyBorder(20, 0, 20, 0));
 		about.setBackground(Color.WHITE);
-		navbar.add(about);
+		nav.add(about);
 		about.setLayout(new BorderLayout(0, 0));
 		
-		btnAbout = new JButton("Về chúng tôi");
-		btnAbout.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-about-32.png")));
+		btnAbout = new JButton("About");
 		btnAbout.setHorizontalAlignment(SwingConstants.LEFT);
-		btnAbout.setForeground(Color.GRAY);
+		btnAbout.setIcon(new ImageIcon(TrangChu.class.getResource("/img/icons8-about-32.png")));
 		btnAbout.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnAbout.setContentAreaFilled(false);
+		btnAbout.setVerticalAlignment(SwingConstants.CENTER);
+		btnAbout.setIconTextGap(15);
+		btnAbout.setPreferredSize(new Dimension(200, 50));
+		btnAbout.setBorder(null);
 		btnAbout.setBorderPainted(false);
-		btnAbout.setBackground(Color.GRAY);
+		btnAbout.setFocusPainted(false);
+		btnAbout.setContentAreaFilled(false);
+		btnAbout.setOpaque(false);
+		btnAbout.setForeground(Color.GRAY);
+		btnAbout.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 10)); // top, left, bottom, right
+		
 		about.add(btnAbout, BorderLayout.CENTER);
 		
 		paneTrong = new JPanel();
@@ -349,6 +412,8 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 		paneTrong.setBackground(Color.WHITE);
 		navbar.add(paneTrong);
 		paneTrong.setLayout(new BorderLayout(0, 0));
+		
+		
 		
 		btnTrangChu.addMouseListener(this);
 		btnSanPham.addMouseListener(this);
@@ -447,11 +512,37 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-	}   
+		Object o = e.getSource();
+		resetButtonColors(); // reset hết trước
+
+		if (o instanceof JButton) {
+			JButton hoveredButton = (JButton) o;
+			hoveredButton.setForeground(Color.WHITE);
+			hoveredButton.setBackground(new Color(52, 122, 228));
+			hoveredButton.setOpaque(true);
+		}
+	}
+
 
 	@Override
 	public void mouseExited(MouseEvent e) {
-	   
+		resetButtonColors(); // tùy chọn, có thể bỏ nếu thấy không cần
+	}
+
+	private void resetButtonColors() {
+		Color defaultColor = Color.WHITE;
+		Color defaultTextColor = Color.GRAY;
+
+		JButton[] buttons = {
+		    btnTrangChu, btnSanPham, btnKhachHang, btnNhanVien,
+		    btnNhaCungCap, btnHoaDon, btnThongKe, btnAbout
+		};
+
+		for (JButton btn : buttons) {
+		    btn.setBackground(defaultColor);
+		    btn.setForeground(defaultTextColor);
+		    btn.setOpaque(true);
+		}
 	}
 
 	
