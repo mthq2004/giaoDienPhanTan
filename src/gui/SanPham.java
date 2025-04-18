@@ -20,6 +20,11 @@ public class SanPham extends JPanel {
     private JTable tableSanPham;
     private DefaultTableModel modelSanPham;
     private JTextField txtTimKiem;
+	private JButton btnThemSanPham;
+	JComboBox<String> cmbLoai;
+	private JButton btnInDanhSach;
+	private JButton btnLamMoi;
+	private JButton btnTim;
 
     public SanPham() {
         setLayout(null);
@@ -32,7 +37,7 @@ public class SanPham extends JPanel {
         add(lblTitle);
 
         // Nút thêm sản phẩm
-        JButton btnThemSanPham = new JButton("+ Thêm sản phẩm");
+        btnThemSanPham = new JButton("+ Thêm sản phẩm");
         btnThemSanPham.setBackground(new Color(0, 153, 51));
         btnThemSanPham.setForeground(Color.WHITE);
         btnThemSanPham.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -44,7 +49,7 @@ public class SanPham extends JPanel {
             form.setVisible(true);  // Hiển thị form
         });
         // Combobox loại sản phẩm
-        JComboBox<String> cmbLoai = new JComboBox<>(new String[]{
+        cmbLoai = new JComboBox<>(new String[]{
             "Tất cả sản phẩm", "Thuốc", "Vitamin", "Kháng sinh"
         });
         cmbLoai.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -52,7 +57,7 @@ public class SanPham extends JPanel {
         add(cmbLoai);
 
         // Nút in danh sách
-        JButton btnInDanhSach = new JButton("In danh sách");
+        btnInDanhSach = new JButton("In danh sách");
         btnInDanhSach.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-print-30.png")));
         btnInDanhSach.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
@@ -63,7 +68,7 @@ public class SanPham extends JPanel {
         add(btnInDanhSach);
 
         // Nút làm mới
-        JButton btnLamMoi = new JButton("Làm mới");
+        btnLamMoi = new JButton("Làm mới");
         btnLamMoi.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-load-30.png")));
         btnLamMoi.setFont(new Font("Tahoma", Font.PLAIN, 14));
         btnLamMoi.setBounds(583, 80, 120, 40);
@@ -72,18 +77,18 @@ public class SanPham extends JPanel {
         // Ô tìm kiếm
         txtTimKiem = new JTextField();
         txtTimKiem.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        txtTimKiem.setBounds(1323, 81, 300, 40);
+        txtTimKiem.setBounds(1330, 81, 300, 40);
         add(txtTimKiem);
 
 
         // Nút tìm kiếm
-        JButton btnTim = 	new JButton();
+        btnTim = 	new JButton();
         btnTim.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
         	}
         });
         btnTim.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-search-30.png"))); // Kiểm tra lại đường dẫn hình
-        btnTim.setBounds(1633, 80, 40, 40);
+        btnTim.setBounds(1640, 80, 40, 40);
         add(btnTim);
 
         // Tên cột
