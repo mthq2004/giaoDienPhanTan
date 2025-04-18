@@ -517,9 +517,10 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 
 		if (o instanceof JButton) {
 			JButton hoveredButton = (JButton) o;
-			hoveredButton.setForeground(Color.WHITE);
-			hoveredButton.setBackground(new Color(52, 122, 228));
 			hoveredButton.setOpaque(true);
+			hoveredButton.setContentAreaFilled(true);
+			hoveredButton.setBackground(new Color(52, 122, 228));
+			hoveredButton.setForeground(Color.WHITE); // nếu muốn chữ nổi bật hơn
 		}
 	}
 
