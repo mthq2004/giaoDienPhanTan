@@ -16,7 +16,7 @@ public class BanHang extends JPanel {
 
     private Color primaryColor = new Color(0, 150, 136);
     private Color secondaryColor = new Color(76, 175, 80);
-    private Color headerButtonColor = new Color(52, 122, 228); /
+    private Color headerButtonColor = new Color(52, 122, 228);
     private Border roundedBorder = BorderFactory.createCompoundBorder(
             new LineBorder(primaryColor, 1, true),
             BorderFactory.createEmptyBorder(5, 10, 5, 10)
