@@ -96,7 +96,7 @@ public class NhaCungCap extends JPanel {
 
         // Tên cột
         String[] colNames = {
-            "Mã NCC", "Tên nhà cung cấp", "Số điện thoại", "Địa chỉ", "Email"
+            "Mã NCC", "Tên nhà cung cấp", "Email", "Số điện thoại", "Địa chỉ", "Hành động"
         };
 
         modelNCC = new DefaultTableModel(colNames, 0);
