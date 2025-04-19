@@ -18,13 +18,14 @@ public class About extends JPanel {
         this.setBackground(Color.WHITE);
         this.setBounds(0, 0, 1681, 954);
         JPanel panel = new JPanel();
+        panel.setBackground(new Color(255, 255, 255));
         panel.setBounds(0, 0, 1681, 954);
         add(panel);
         panel.setLayout(null);
         
         JLabel lblNewLabel = new JLabel("JPanel About");
         lblNewLabel.setIcon(new ImageIcon(About.class.getResource("/img/ABOUT.png")));
-        lblNewLabel.setBounds(0, 0, 1691, 954);
+        lblNewLabel.setBounds(0, 0, 1691, 1000);
         panel.add(lblNewLabel);
 	}
 
