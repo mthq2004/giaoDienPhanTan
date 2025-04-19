@@ -40,7 +40,7 @@ public class KhachHang extends JPanel {
 
         // Nút thêm sản phẩm
         btnThemKhachHang = new JButton("+ Thêm khách hàng");
-        btnThemKhachHang.setBackground(new Color(0, 153, 51));
+        btnThemKhachHang.setBackground(Colors.MAIN_COLOR);
         btnThemKhachHang.setForeground(Color.WHITE);
         btnThemKhachHang.setFont(new Font("Tahoma", Font.PLAIN, 14));
         btnThemKhachHang.setBounds(30, 80, 180, 40);
@@ -70,7 +70,7 @@ public class KhachHang extends JPanel {
         });
         btnLamMoi.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-load-30.png")));
         btnLamMoi.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        btnLamMoi.setBounds(393, 80, 120, 40);
+        btnLamMoi.setBounds(393, 80, 130, 40);
         add(btnLamMoi);
 
         // Ô tìm kiếm
@@ -101,7 +101,7 @@ public class KhachHang extends JPanel {
         // Header bảng
         header = tableKH.getTableHeader();
         header.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        header.setBackground(new Color(0, 153, 51));
+        header.setBackground(Colors.MAIN_COLOR);
         header.setForeground(Color.WHITE);
 
         // Scroll pane chứa bảng

@@ -38,7 +38,7 @@ public class SanPham extends JPanel {
 
         // Nút thêm sản phẩm
         btnThemSanPham = new JButton("+ Thêm sản phẩm");
-        btnThemSanPham.setBackground(new Color(0, 153, 51));
+        btnThemSanPham.setBackground(Colors.MAIN_COLOR);
         btnThemSanPham.setForeground(Color.WHITE);
         btnThemSanPham.setFont(new Font("Tahoma", Font.PLAIN, 14));
         btnThemSanPham.setBounds(30, 80, 180, 40);
@@ -71,7 +71,7 @@ public class SanPham extends JPanel {
         btnLamMoi = new JButton("Làm mới");
         btnLamMoi.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-load-30.png")));
         btnLamMoi.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        btnLamMoi.setBounds(583, 80, 120, 40);
+        btnLamMoi.setBounds(583, 80, 130, 40);
         add(btnLamMoi);
 
         // Ô tìm kiếm
@@ -105,7 +105,7 @@ public class SanPham extends JPanel {
         // Header bảng
         JTableHeader header = tableSanPham.getTableHeader();
         header.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        header.setBackground(new Color(0, 153, 51));
+        header.setBackground(Colors.MAIN_COLOR);
         header.setForeground(Color.WHITE);
 
         // Scroll pane chứa bảng

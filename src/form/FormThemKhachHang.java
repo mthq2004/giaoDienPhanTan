@@ -32,27 +32,27 @@ public class FormThemKhachHang extends JDialog {
 
         // Mã SP
         JLabel lblMaKH = new JLabel("Mã khách hàng:");
-        lblMaKH.setBounds(30, 60, 120, 25);
+        lblMaKH.setBounds(30, 60, 120, 30);
         getContentPane().add(lblMaKH);
         txtMaKH = new JTextField("KH0001");
-        txtMaKH.setBounds(150, 60, 200, 25);
+        txtMaKH.setBounds(150, 60, 200, 30);
         getContentPane().add(txtMaKH);
 
         // Tên SP
         JLabel lblHoTen = new JLabel("Họ tên:");
-        lblHoTen.setBounds(30, 100, 120, 25);
+        lblHoTen.setBounds(30, 100, 120, 30);
         getContentPane().add(lblHoTen);
         txtHoTen = new JTextField();
-        txtHoTen.setBounds(150, 100, 200, 25);
+        txtHoTen.setBounds(150, 100, 200, 30);
         getContentPane().add(txtHoTen);
 
         // Loại SP
         JLabel lblGioiTinh = new JLabel("Giới tính:");
-        lblGioiTinh.setBounds(30, 180, 120, 25);
+        lblGioiTinh.setBounds(30, 180, 120, 30);
         getContentPane().add(lblGioiTinh);
         cmbGioiTinh = new JComboBox<>(new String[]{"-- Hãy chọn loại sản phẩm --", "Thuốc", "Vitamin", "Kháng sinh"});
         cmbGioiTinh.setModel(new DefaultComboBoxModel(new String[] {"-- Hãy chọn giới tính--", "Nam", "Nữ", "Khác"}));
-        cmbGioiTinh.setBounds(150, 180, 200, 25);
+        cmbGioiTinh.setBounds(150, 180, 200, 30);
         getContentPane().add(cmbGioiTinh);
 
         // Số lượng
@@ -60,7 +60,7 @@ public class FormThemKhachHang extends JDialog {
         lblSdt.setBounds(30, 140, 100, 25);
         getContentPane().add(lblSdt);
         txtSdt = new JTextField();
-        txtSdt.setBounds(150, 140, 200, 25);
+        txtSdt.setBounds(150, 140, 200, 30);
         getContentPane().add(txtSdt);
 
         // Đơn giá
@@ -68,15 +68,15 @@ public class FormThemKhachHang extends JDialog {
         lblGhiChu.setBounds(30, 260, 100, 25);
         getContentPane().add(lblGhiChu);
         txtGhiChu = new JTextField();
-        txtGhiChu.setBounds(150, 260, 200, 25);
+        txtGhiChu.setBounds(150, 260, 200, 30);
         getContentPane().add(txtGhiChu);
 
         // Hạn sử dụng
         JLabel lblNgaySinh = new JLabel("Ngày sinh:");
-        lblNgaySinh.setBounds(30, 220, 100, 25);
+        lblNgaySinh.setBounds(30, 220, 100, 30);
         getContentPane().add(lblNgaySinh);
         dateNgaySinh = new JDateChooser();
-        dateNgaySinh.setBounds(150, 220, 200, 25);
+        dateNgaySinh.setBounds(150, 220, 200, 30);
         dateNgaySinh.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(dateNgaySinh);
 

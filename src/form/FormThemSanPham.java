@@ -6,20 +6,22 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import com.toedter.calendar.JDateChooser;
 
 public class FormThemSanPham extends JDialog {
     private JTextField txtMaSP, txtTenSP, txtSoLuong, txtDonGia, txtNhaSX, txtMoTa;
     private JComboBox<String> cmbLoai, cmbDanhMuc, cmbDonViTinh, cmbThue;
     private JDateChooser dateNSX, dateHSD;
-    private JTable tableSanPham;
     private DefaultTableModel model;
 
     public FormThemSanPham(Frame owner) {
         super(owner, "Thêm mới sản phẩm", true);  // Chế độ modal (chặn cửa sổ chính)
         getContentPane().setLayout(null);
         setBackground(Color.WHITE);
-        setBounds(0, 0, 1200, 700);
+        setBounds(0, 0, 1200, 350);
         
         setLocationRelativeTo(null);
 
@@ -30,35 +32,35 @@ public class FormThemSanPham extends JDialog {
 
         // Thời gian tạo
         JLabel lblThoiGian = new JLabel("Thời gian tạo:");
-        lblThoiGian.setBounds(30, 60, 120, 25);
+        lblThoiGian.setBounds(30, 60, 120, 30);
         getContentPane().add(lblThoiGian);
         JTextField txtThoiGian = new JTextField(java.time.LocalDateTime.now().toString());
         txtThoiGian.setEditable(false);
-        txtThoiGian.setBounds(150, 60, 200, 25);
+        txtThoiGian.setBounds(150, 60, 200, 30);
         getContentPane().add(txtThoiGian);
 
         // Mã SP
         JLabel lblMaSP = new JLabel("Mã sản phẩm:");
-        lblMaSP.setBounds(30, 100, 120, 25);
+        lblMaSP.setBounds(30, 100, 120, 30);
         getContentPane().add(lblMaSP);
         txtMaSP = new JTextField("SP0115");
-        txtMaSP.setBounds(150, 100, 200, 25);
+        txtMaSP.setBounds(150, 100, 200, 30);
         getContentPane().add(txtMaSP);
 
         // Tên SP
         JLabel lblTenSP = new JLabel("Tên sản phẩm:");
-        lblTenSP.setBounds(30, 140, 120, 25);
+        lblTenSP.setBounds(30, 140, 120, 30);
         getContentPane().add(lblTenSP);
         txtTenSP = new JTextField();
-        txtTenSP.setBounds(150, 140, 200, 25);
+        txtTenSP.setBounds(150, 140, 200, 30);
         getContentPane().add(txtTenSP);
 
         // Loại SP
         JLabel lblLoaiSP = new JLabel("Loại sản phẩm:");
-        lblLoaiSP.setBounds(30, 180, 120, 25);
+        lblLoaiSP.setBounds(30, 180, 120, 30);
         getContentPane().add(lblLoaiSP);
         cmbLoai = new JComboBox<>(new String[]{"-- Hãy chọn loại sản phẩm --", "Thuốc", "Vitamin", "Kháng sinh"});
-        cmbLoai.setBounds(150, 180, 200, 25);
+        cmbLoai.setBounds(150, 180, 200, 30);
         getContentPane().add(cmbLoai);
 
         // Số lượng
@@ -66,7 +68,7 @@ public class FormThemSanPham extends JDialog {
         lblSoLuong.setBounds(400, 60, 100, 25);
         getContentPane().add(lblSoLuong);
         txtSoLuong = new JTextField();
-        txtSoLuong.setBounds(500, 60, 200, 25);
+        txtSoLuong.setBounds(500, 60, 200, 30);
         getContentPane().add(txtSoLuong);
 
         // Đơn giá
@@ -74,7 +76,7 @@ public class FormThemSanPham extends JDialog {
         lblDonGia.setBounds(400, 100, 100, 25);
         getContentPane().add(lblDonGia);
         txtDonGia = new JTextField();
-        txtDonGia.setBounds(500, 100, 200, 25);
+        txtDonGia.setBounds(500, 100, 200, 30);
         getContentPane().add(txtDonGia);
 
         // Nhà SX
@@ -82,7 +84,7 @@ public class FormThemSanPham extends JDialog {
         lblNSX.setBounds(400, 140, 100, 25);
         getContentPane().add(lblNSX);
         txtNhaSX = new JTextField();
-        txtNhaSX.setBounds(500, 140, 200, 25);
+        txtNhaSX.setBounds(500, 140, 200, 30);
         getContentPane().add(txtNhaSX);
 
         // Ngày sản xuất
@@ -90,7 +92,7 @@ public class FormThemSanPham extends JDialog {
         lblNgaySX.setBounds(400, 180, 100, 25);
         getContentPane().add(lblNgaySX);
         dateNSX = new JDateChooser();
-        dateNSX.setBounds(500, 180, 200, 25);
+        dateNSX.setBounds(500, 180, 200, 30);
         dateNSX.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(dateNSX);
 
@@ -99,7 +101,7 @@ public class FormThemSanPham extends JDialog {
         lblHSD.setBounds(750, 60, 100, 25);
         getContentPane().add(lblHSD);
         dateHSD = new JDateChooser();
-        dateHSD.setBounds(850, 60, 200, 25);
+        dateHSD.setBounds(850, 60, 200, 30);
         dateHSD.setDateFormatString("dd/MM/yyyy");
         getContentPane().add(dateHSD);
 
@@ -108,7 +110,7 @@ public class FormThemSanPham extends JDialog {
         lblDanhMuc.setBounds(750, 100, 100, 25);
         getContentPane().add(lblDanhMuc);
         cmbDanhMuc = new JComboBox<>(new String[]{"-- Hãy chọn danh mục --", "Thuốc kê đơn", "Thực phẩm chức năng"});
-        cmbDanhMuc.setBounds(850, 100, 200, 25);
+        cmbDanhMuc.setBounds(850, 100, 200, 30);
         getContentPane().add(cmbDanhMuc);
 
         // Đơn vị tính
@@ -116,7 +118,7 @@ public class FormThemSanPham extends JDialog {
         lblDonVi.setBounds(750, 140, 100, 25);
         getContentPane().add(lblDonVi);
         cmbDonViTinh = new JComboBox<>(new String[]{"-- Hãy chọn đơn vị tính --", "Viên", "Hộp", "Chai"});
-        cmbDonViTinh.setBounds(850, 140, 200, 25);
+        cmbDonViTinh.setBounds(850, 140, 200, 30);
         getContentPane().add(cmbDonViTinh);
 
         // Thuế
@@ -124,7 +126,7 @@ public class FormThemSanPham extends JDialog {
         lblThue.setBounds(750, 180, 100, 25);
         getContentPane().add(lblThue);
         cmbThue = new JComboBox<>(new String[]{"-- Hãy chọn thuế --", "5%", "10%", "0%"});
-        cmbThue.setBounds(850, 180, 200, 25);
+        cmbThue.setBounds(850, 180, 200, 30);
         getContentPane().add(cmbThue);
 
         // Mô tả
@@ -132,12 +134,23 @@ public class FormThemSanPham extends JDialog {
         lblMoTa.setBounds(30, 220, 100, 25);
         getContentPane().add(lblMoTa);
         txtMoTa = new JTextField();
-        txtMoTa.setBounds(150, 220, 900, 25);
+        txtMoTa.setBounds(150, 220, 900, 30);
         getContentPane().add(txtMoTa);
+        
+     // Nút huỷ
+        JButton btnHuy = new JButton("x Huỷ");
+        btnHuy.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        	}
+        });
+        btnHuy.setBounds(475, 260, 120, 40);
+        btnHuy.setBackground(Color.LIGHT_GRAY);
+        btnHuy.setForeground(Color.WHITE);
+        getContentPane().add(btnHuy);
 
         // Nút Thêm
-        JButton btnThem = new JButton("+ Thêm sản phẩm");
-        btnThem.setBounds(500, 260, 200, 35);
+        JButton btnThem = new JButton("+ Thêm");
+        btnThem.setBounds(605, 260, 120, 40);
         btnThem.setBackground(new Color(0, 200, 0));
         btnThem.setForeground(Color.WHITE);
         getContentPane().add(btnThem);
@@ -147,25 +160,5 @@ public class FormThemSanPham extends JDialog {
         btnLamMoi.setToolTipText("Làm mới");
         btnLamMoi.setBounds(1110, 20, 40, 40);
         getContentPane().add(btnLamMoi);
-
-        // Bảng sản phẩm
-        JLabel lblTable = new JLabel("Sản phẩm đã thêm");
-        lblTable.setFont(new Font("Tahoma", Font.BOLD, 16));
-        lblTable.setBounds(30, 320, 300, 25);
-        getContentPane().add(lblTable);
-
-        String[] column = {"Mã sản phẩm", "Tên sản phẩm", "Ngày sản xuất", "Nhà sản xuất", "Số lượng tồn", "Đơn giá", "Thuế", "Đơn vị tính", "Mô tả", "Hạn sử dụng", "Danh mục", "Loại"};
-        model = new DefaultTableModel(column, 0);
-        tableSanPham = new JTable(model);
-
-        JTableHeader header = tableSanPham.getTableHeader();
-        header.setBackground(new Color(0, 200, 0));
-        header.setForeground(Color.WHITE);
-        header.setFont(new Font("Tahoma", Font.BOLD, 12));
-
-        JScrollPane scrollPane = new JScrollPane(tableSanPham);
-        scrollPane.setBounds(30, 360, 1120, 300);
-        scrollPane.setBorder(new LineBorder(Color.LIGHT_GRAY));
-        getContentPane().add(scrollPane);
     }
 }

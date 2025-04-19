@@ -44,7 +44,7 @@ public class NhaCungCap extends JPanel {
 
         // Nút thêm sản phẩm
         btnThemNhaCungCap = new JButton("+ Thêm nhà cung cấp");
-        btnThemNhaCungCap.setBackground(new Color(0, 153, 51));
+        btnThemNhaCungCap.setBackground(Colors.MAIN_COLOR);
         btnThemNhaCungCap.setForeground(Color.WHITE);
         btnThemNhaCungCap.setFont(new Font("Tahoma", Font.PLAIN, 14));
         btnThemNhaCungCap.setBounds(30, 80, 180, 40);
@@ -74,7 +74,7 @@ public class NhaCungCap extends JPanel {
         });
         btnLamMoi.setIcon(new ImageIcon(SanPham.class.getResource("/img/icons8-load-30.png")));
         btnLamMoi.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        btnLamMoi.setBounds(393, 80, 120, 40);
+        btnLamMoi.setBounds(393, 80, 130, 40);
         add(btnLamMoi);
 
         // Ô tìm kiếm
@@ -105,7 +105,7 @@ public class NhaCungCap extends JPanel {
         // Header bảng
         header = tableNCC.getTableHeader();
         header.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        header.setBackground(new Color(0, 153, 51));
+        header.setBackground(Colors.MAIN_COLOR);
         header.setForeground(Color.WHITE);
 
         // Scroll pane chứa bảng

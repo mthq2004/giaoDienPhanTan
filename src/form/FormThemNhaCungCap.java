@@ -32,18 +32,18 @@ public class FormThemNhaCungCap extends JDialog {
 
         // Mã
         JLabel lblMaNcc = new JLabel("Mã nhà cung cấp:");
-        lblMaNcc.setBounds(30, 60, 120, 25);
+        lblMaNcc.setBounds(30, 60, 120, 30);
         getContentPane().add(lblMaNcc);
         txtMaNcc = new JTextField("NCC0001");
-        txtMaNcc.setBounds(150, 60, 200, 25);
+        txtMaNcc.setBounds(150, 60, 200, 30);
         getContentPane().add(txtMaNcc);
 
         // Tên SP
         JLabel lblTen = new JLabel("Tên nhà cung cấp:");
-        lblTen.setBounds(30, 100, 120, 25);
+        lblTen.setBounds(30, 100, 120, 30);
         getContentPane().add(lblTen);
         txtTenNcc = new JTextField();
-        txtTenNcc.setBounds(150, 100, 200, 25);
+        txtTenNcc.setBounds(150, 100, 200, 30);
         getContentPane().add(txtTenNcc);
 
         // Số lượng
@@ -51,7 +51,7 @@ public class FormThemNhaCungCap extends JDialog {
         lblSdt.setBounds(30, 140, 100, 25);
         getContentPane().add(lblSdt);
         txtSdt = new JTextField();
-        txtSdt.setBounds(150, 140, 200, 25);
+        txtSdt.setBounds(150, 140, 200, 30);
         getContentPane().add(txtSdt);
 
         // Đơn giá
@@ -59,7 +59,7 @@ public class FormThemNhaCungCap extends JDialog {
         lblDiaChi.setBounds(30, 220, 100, 25);
         getContentPane().add(lblDiaChi);
         txtDiaChi = new JTextField();
-        txtDiaChi.setBounds(150, 220, 200, 25);
+        txtDiaChi.setBounds(150, 220, 200, 30);
         getContentPane().add(txtDiaChi);
 
         // Nút huỷ
@@ -88,7 +88,7 @@ public class FormThemNhaCungCap extends JDialog {
         getContentPane().add(lblEmail);
         
         txtEmail = new JTextField();
-        txtEmail.setBounds(150, 180, 200, 25);
+        txtEmail.setBounds(150, 180, 200, 30);
         getContentPane().add(txtEmail);
     }
 }
