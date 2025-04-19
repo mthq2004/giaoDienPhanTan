@@ -1,2 +1,13 @@
 /gui/
 /form/
+
+# Thư mục biên dịch
+/bin/
+/build/
+/target/
+
+# Eclipse
+*.class
+*.classpath
+*.project
+*.settings/

@@ -92,7 +92,7 @@ public class KhachHang extends JPanel {
 
         // Tên cột
         String[] colNames = {
-            "Mã NCC", "Tên nhà cung cấp", "Số điện thoại", "Địa chỉ", "Email"
+            "Mã khách hàng", "Họ tên", "Số điện thoại", "Giới tính", "Năm sinh", "Điểm tích luỹ", "Ghi chú", "Hành động"
         };
 
         modelKH = new DefaultTableModel(colNames, 0);
