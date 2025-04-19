@@ -211,8 +211,8 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 		navbar.add(nav);
 		
 		nav.setLayout(new BoxLayout(nav, BoxLayout.Y_AXIS));
-		panelTrangChu = new JPanel();
-		main.add(panelTrangChu, BorderLayout.CENTER);
+		
+		main.add(new BanHang(), BorderLayout.CENTER);
 		
 		trangChu = new JPanel();
 		trangChu.setBorder(new EmptyBorder(20, 0, 20, 0));
@@ -453,7 +453,7 @@ public class TrangChu extends JFrame implements ActionListener, MouseListener{
 	    
 	    if (o.equals(btnTrangChu)) {
 	        main.removeAll();
-	        main.add(panelTrangChu);
+	        main.add(new BanHang());
 	        main.revalidate();
 	        main.repaint();
 	    }
